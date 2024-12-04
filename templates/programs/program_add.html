@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Program Add</title>
+</head>
+<body>
+    <h1>Create New programming Language</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="title">Title</label><br>
+        <input type="text" id="title" name="title"><br>
+        <label for="description">Description</label><br>
+        <textarea name="description" id="description" cols="30" rows="10"></textarea><br>
+        <input type="submit" value="Create language">
+    </form>
+    <h2>TASK LIST</h2>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>TITLE</th>
+            <th>DESCRIPTION</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for program in programs%}
+            <tr>
+                <td>{{program.title}}</td>
+                <td>{{program.description}}</td>
+           </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'programs:list' %}">Back to List</a>
+</body>
+</html>

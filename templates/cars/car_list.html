@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car List</title>
+</head>
+<body>
+    <h1>Car List</h1>
+    {% for car in cars %}
+        <h2>{{ car.name }}</h2>
+        <h2>{{ car.brand }}</h2>
+        <h2>{{ car.year }}</h2>
+        <ul>
+            {% for car in car..all %}
+                <li>{{ car.name }}</li>
+            {% endfor %}
+            <li>Tesla Model S</li>
+        <li>BMW 3 Series</li>
+        <li>Mercedes-Benz C-Class</li>
+        <li>Audi A4</li>
+        <li>Toyota Corolla</li>
+        </ul>
+    {% endfor %}
+    <a href="{% url 'cars:car_add' %}">Add New Car</a>
+</body>
+</html>

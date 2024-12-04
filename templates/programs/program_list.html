@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Program List</title>
+</head>
+<body>
+    <h1>Programming Languages</h1>
+    {% for program in programs %}
+        <h2>{{ program.title }}</h2>
+        <ul>
+            {% for language in program.languages.all %}
+                <li>{{ language.name }}</li>
+            {% endfor %}
+            <li>Python</li>
+            <li>JavaScript</li>
+            <li>Java</li>
+            <li>C++</li>
+            <li>Ruby</li>
+        </ul>
+    {% endfor %}
+    <a href="{% url 'programs:program_add' %}">Add New Language</a>
+</body>
+</html>
